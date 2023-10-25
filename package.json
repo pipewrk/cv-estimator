@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "pdf-parse": "^1.1.1",
     "textract": "^2.4.0",
     "prompt": "^1.0.0"
   }

@@ -1,5 +1,4 @@
 const fs = require('fs');
-const pdfParse = require('pdf-parse');
 const textract = require('textract');
 
 function readFile(filePath) {
@@ -10,11 +9,7 @@ function readFile(filePath) {
         return;
       }
 
-      if (filePath.endsWith('.pdf')) {
-        pdfParse(data)
-          .then(resolve)
-          .catch(reject);
-      } else if (filePath.endsWith('.docx')) {
+      if (filePath.endsWith('.pdf') || filePath.endsWith('.docx')) {
         textract.fromFileWithPath(filePath, function(error, text) {
           if (error) {
             reject(error);
