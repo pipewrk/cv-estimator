@@ -1,7 +1,7 @@
-const fs = require('fs');
-const pdf = require('pdf-parse');
-const path = require('path');
-const os = require('os');
+import fs from 'fs';
+import pdf from 'pdf-parse';
+import path from 'path';
+import os from 'os';
 
 function readFile(filePath) {
   // Replace ~ with the home directory path
@@ -28,4 +28,4 @@ function readFile(filePath) {
   });
 }
 
-module.exports = { readFile };
+export { readFile };

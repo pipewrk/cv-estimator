@@ -1,6 +1,6 @@
-const inquirer = require('inquirer');
-const fileReader = require('./fileReader');
-const openaiService = require('./openaiService');
+import inquirer from 'inquirer';
+import { readFile } from './fileReader.js';
+import { sendToOpenAI } from './openaiService.js';
 
 inquirer.prompt([
   {
