@@ -9,17 +9,13 @@ function readFile(filePath) {
         return;
       }
 
-      if (filePath.endsWith('.pdf') || filePath.endsWith('.docx')) {
-        textract.fromFileWithPath(filePath, function(error, text) {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(text);
-          }
-        });
-      } else {
-        reject(new Error('Unsupported file type'));
-      }
+      textract.fromFileWithPath(filePath, function(error, text) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(text);
+        }
+      });
     });
   });
 }
