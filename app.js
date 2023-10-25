@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
-const readFile = require('./fileReader.js');
-const sendToOpenAI = require('./openaiService.js');
+const { readFile } = require('./fileReader.js');
+const { sendToOpenAI } = require('./openaiService.js');
 
 inquirer.prompt([
   {
