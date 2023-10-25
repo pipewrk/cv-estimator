@@ -1,0 +1,15 @@
+{
+  "name": "cv-estimator",
+  "version": "1.0.0",
+  "description": "Estimates the total remuneration package for a candidate based on their CV",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "pdf-parse": "^1.1.1",
+    "mammoth.js": "^1.6.2",
+    "prompt": "^1.0.0"
+  }
+}
