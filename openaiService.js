@@ -5,8 +5,8 @@ const OPENAI_API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completi
 
 function sendToOpenAI(text) {
   const data = {
-    prompt: `Given the following CV:\n${text}\nEstimate the total remuneration package for this candidate:`,
-    max_tokens: 100
+    prompt: `Estimate the total remuneration package for this candidate given the following CV:\n${text}`,
+    max_tokens: 60
   };
 
   const config = {
