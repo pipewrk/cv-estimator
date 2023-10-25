@@ -1,5 +1,5 @@
-import { OpenAI } from 'openai';
-import { config } from 'dotenv';
+const { OpenAI } = require('openai');
+const { config } = require('dotenv');
 
 dotenv.config();
 

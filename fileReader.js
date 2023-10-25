@@ -1,7 +1,7 @@
-import fs from 'fs';
-import pdf from 'pdf-parse';
-import path from 'path';
-import os from 'os';
+const fs = require('fs');
+const pdf = require('pdf-parse');
+const path = require('path');
+const os = require('os');
 
 function readFile(filePath) {
   // Replace ~ with the home directory path
