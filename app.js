@@ -13,7 +13,7 @@ inquirer.prompt([
     .then(text => sendToOpenAI(text))
     .then(response => {
       if (response.choices && response.choices.length > 0) {
-        let message = response.choices[0].message;
+        let message = response.choices[0].message.content;
         message = message.replace(/\n/g, '\n');
         message = message.replace(/\+/g, '');
         console.log('Estimated remuneration package:\n', message);
