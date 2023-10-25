@@ -19,4 +19,4 @@ async function sendToOpenAI(text) {
   return response;
 }
 
-module.exports = sendToOpenAI;
+module.exports = { sendToOpenAI };
