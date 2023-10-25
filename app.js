@@ -11,6 +11,12 @@ inquirer.prompt([
 ]).then(result => {
   readFile(result.filePath)
     .then(text => sendToOpenAI(text))
-    .then(response => console.log('Estimated remuneration package:', response.data.choices[0].text))
+    .then(response => {
+      if (response.data && response.data.choices && response.data.choices.length > 0) {
+        console.log('Estimated remuneration package:', response.data.choices[0].text);
+      } else {
+        console.error('Unexpected response from OpenAI:', response);
+      }
+    })
     .catch(err => console.error(err));
 });
