@@ -9,6 +9,6 @@
   "dependencies": {
     "axios": "^0.24.0",
     "textract": "^2.4.0",
-    "prompt": "^2.0.1"
+    "inquirer": "^8.2.0"
   }
 }
