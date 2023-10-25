@@ -1,6 +1,6 @@
 const fs = require('fs');
 const pdfParse = require('pdf-parse');
-const mammoth = require('mammoth');
+const textract = require('textract');
 
 function readFile(filePath) {
   return new Promise((resolve, reject) => {
@@ -15,9 +15,13 @@ function readFile(filePath) {
           .then(resolve)
           .catch(reject);
       } else if (filePath.endsWith('.docx')) {
-        mammoth.extractRawText({path: filePath})
-          .then(result => resolve(result.value))
-          .catch(reject);
+        textract.fromFileWithPath(filePath, function(error, text) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(text);
+          }
+        });
       } else {
         reject(new Error('Unsupported file type'));
       }
