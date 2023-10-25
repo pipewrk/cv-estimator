@@ -13,18 +13,22 @@ function readFile(filePath) {
   filePath = path.resolve(filePath);
 
   return new Promise((resolve, reject) => {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        reject(err);
-        return;
-      }
+    if (fs.existsSync(filePath)) {
+      fs.readFile(filePath, (err, data) => {
+        if (err) {
+          reject(err);
+          return;
+        }
 
-      pdf(data).then(function(data) {
-        resolve(data.text);
-      }).catch(function(error){
-        reject(error);
+        pdf(data).then(function(data) {
+          resolve(data.text);
+        }).catch(function(error){
+          reject(error);
+        });
       });
-    });
+    } else {
+      reject(new Error(`File not found: ${filePath}`));
+    }
   });
 }
 
