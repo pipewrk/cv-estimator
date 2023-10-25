@@ -1,19 +1,22 @@
-const openai = require('openai');
-const dotenv = require('dotenv');
+import OpenAI from 'openai';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-openai.apiKey = OPENAI_API_KEY;
+const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-function sendToOpenAI(text) {
+async function sendToOpenAI(text) {
   const data = {
-    engine: 'davinci-codex',
-    prompt: `Estimate the total remuneration package for this candidate given the following CV:\n${text}`,
-    max_tokens: 60
+    messages: [{
+      role: 'system',
+      content: `Estimate the total remuneration package for this candidate given the following CV:\n${text}`
+    }],
+    model: 'gpt-3.5-turbo',
   };
 
-  return openai.Completion.create(data);
+  const response = await openai.chat.completions.create(data);
+  return response;
 }
 
-module.exports = { sendToOpenAI };
+export { sendToOpenAI };
