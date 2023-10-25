@@ -1,6 +1,9 @@
 const axios = require('axios');
+const dotenv = require('dotenv');
 
-const OPENAI_API_KEY = 'your-openai-api-key';
+dotenv.config();
+
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_API_URL = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
 function sendToOpenAI(text) {
