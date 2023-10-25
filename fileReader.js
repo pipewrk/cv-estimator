@@ -1,5 +1,5 @@
 const fs = require('fs');
-const textract = require('textract');
+const pdf = require('pdf-parse');
 
 function readFile(filePath) {
   return new Promise((resolve, reject) => {
@@ -9,12 +9,10 @@ function readFile(filePath) {
         return;
       }
 
-      textract.fromFileWithPath(filePath, function(error, text) {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(text);
-        }
+      pdf(data).then(function(data) {
+        resolve(data.text);
+      }).catch(function(error){
+        reject(error);
       });
     });
   });

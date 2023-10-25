@@ -9,6 +9,6 @@
   "dependencies": {
     "axios": "^0.24.0",
     "inquirer": "^8.2.0",
-    "textract": "^2.5.0"
+    "pdf-parse": "^1.1.1"
   }
 }
