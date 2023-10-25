@@ -7,8 +7,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "textract": "^2.4.0",
-    "prompt": "^1.0.0"
+    "prompt": "^2.0.1"
   }
 }
