@@ -32,4 +32,4 @@ function readFile(filePath) {
   });
 }
 
-export { readFile };
+module.exports = readFile;

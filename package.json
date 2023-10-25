@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Estimates the total remuneration package for a candidate based on their CV",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js"
   },
