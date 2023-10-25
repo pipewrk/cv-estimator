@@ -1,5 +1,5 @@
 const { OpenAI } = require('openai');
-const { config } = require('dotenv');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
