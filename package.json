@@ -1,7 +1,7 @@
 {
   "name": "cv-estimator",
   "version": "1.0.0",
-  "description": "Estimates the total remuneration package for a candidate based on their CV",
+  "description": "PDF/DOC Parser & OpenAI API Integration for estimating total remuneration packages",
   "main": "app.js",
   "type": "commonjs",
   "scripts": {

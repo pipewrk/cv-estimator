@@ -1,0 +1,1 @@
+1. make a node app that prompts for the path of a local pdf of doc file, parses the entire text and sends it to openai api with the prompt "given the following cv, estimate the total renumeration package for this candidate"
